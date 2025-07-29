@@ -16,6 +16,8 @@ class Task(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     attachment = models.FileField(upload_to='tasks/files/', blank=True, null=True)  # Supports image/pdf
     created_at = models.DateTimeField(auto_now_add=True)
+    attachment = models.FileField(upload_to='attachments/', null=True, blank=True)
+
 
     def __str__(self):
         return self.title
